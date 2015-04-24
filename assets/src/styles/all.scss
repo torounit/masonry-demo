@@ -5,30 +5,38 @@
 
 $gutter: 20px;
 
+.viewport {
+	overflow: hidden;
+}
 
 .container {
 	padding: 0 $gutter;
+	box-sizing: border-box;
+	max-width: 1200px;
+	margin: auto;
 }
 
 .tiles {
 	margin: 0 $gutter/2 * -1;
 }
 
-.size {
+.size,
+.tile {
 	width: 50%;
+	@media #{$small-up} {
+		width: 33.3333333333%;
+	}
 	@media #{$medium-up} {
 		width: 25%;
 	}
 }
 
 
+
+
 .tile {
 	position: relative;
-	width: 50%;
 
-	@media #{$medium-up} {
-		width: 25%;
-	}
 
 	&::before {
 		content: "";

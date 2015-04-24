@@ -4,41 +4,22 @@
 	<meta charset="UTF-8">
 	<title>masonry demo</title>
 	<link rel="stylesheet" href="assets/dist/styles/all.css"/>
+
 </head>
 <body>
 
-<div class="container">
+<div class="viewport">
+	<div class="container">
 
-	<div class="tiles">
-		<div class="size"></div>
+		<div class="tiles">
+			<div class="size"></div>
 
-		<?php for($i = 0; $i < 50; $i ++):?>
+		</div>
 
-			<?php
-			$class = "";
-			$rand = rand( 0, 20 );
-			if($rand < 1) {
-				$class = "tile_dobule-w tile_dobule-h";
-			}
-			elseif($rand < 3) {
-				$class = "tile_dobule-w";
-			}
-			elseif($rand < 5) {
-				$class = "tile_dobule-h";
-			}
-			?>
-
-			<div class="tile <?=$class;?>">
-				<div class="tile__content"></div>
-			</div>
-
-		<?php endfor;?>
+		<p><a href="#" class="btn" data-tile-append >Append Tiles</a></p>
 
 	</div>
-
-
 </div>
-
 
 <script src="assets/dist/scripts/all.js"></script>
 </body>
