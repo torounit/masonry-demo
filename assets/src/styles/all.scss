@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+@import "normalize";
+@import "mq";
+
+$gutter: 20px;
+
+
+.container {
+	padding: 0 $gutter;
+}
+
+.tiles {
+	margin: 0 $gutter/2 * -1;
+}
+
+.size {
+	width: 50%;
+	@media #{$medium-up} {
+		width: 25%;
+	}
+}
+
+
+.tile {
+	position: relative;
+	width: 50%;
+
+	@media #{$medium-up} {
+		width: 25%;
+	}
+
+	&::before {
+		content: "";
+		padding-top: 100%;
+		display: block;
+	}
+
+	.tile__content {
+		box-sizing: border-box;
+		padding: $gutter/2;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: url("http://placehold.jp/130x130.png") no-repeat center;
+		background-clip: content-box;
+		background-size: cover;
+	}
+
+	&_dobule-h {
+		&::before {
+			padding-top: 200%;
+		}
+
+		.tile__content {
+			background-image: url("http://placehold.jp/130x280.png");
+		}
+	}
+
+	&_dobule-w {
+
+		width: 100%;
+		@media #{$medium-up} {
+			width: 50%;
+		}
+
+		&::before {
+			padding-top: 50%;
+
+		}
+
+		.tile__content {
+			background-image: url("http://placehold.jp/280x130.png");
+		}
+	}
+
+	&_dobule-w.tile_dobule-h {
+		&::before {
+			padding-top: 100%;
+		}
+
+		.tile__content {
+			background-image: url("http://placehold.jp/280x280.png");
+		}
+
+	}
+}
